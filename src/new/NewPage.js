@@ -1,5 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Button from './components/Button';
+import Input from './components/Input';
+
 
 const NewPage = props => {
   return (
@@ -10,9 +13,9 @@ const NewPage = props => {
             <input label="Descrição" id="description" name="description" onChange={""}/>
             <input label="Preço" id="price" name="price" onChange={""}/>
             <hr/>
-            <button onClick={""}>
+            <Button onClick={""}>
                 Submeter produto
-            </button>
+            </Button>
         </form>
     </div>
   )
