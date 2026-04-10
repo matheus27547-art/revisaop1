@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import api from '../utils/api'
 
 
 const AllPage = props => {
+    const [listaProdutos, setProducts] = React.useState([])
+
+    const loadProducts = () => {
+        api.get('/products')
+            .then(res => setProducts(res.data))
+    }
+
+    useEffect(() => {
+        loadProducts()
+    }, [])
+
+    const handleDelete = id => {
+        api.delete(`/products/${id}`)
+            .then(res => loadProducts())
+    }
+
+
+
   return (
     <div>
         <tabel>
@@ -14,12 +33,14 @@ const AllPage = props => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Nome</td>
-                    <td>Descrição</td>
-                    <td>Preço</td>
-                    <td>X</td>
-                </tr>
+                {listaProdutos.map(p => (
+                        <tr key={p.id}>
+                        <td>{p.nome}</td>
+                        <td>{p.descricao}</td>
+                        <td>{p.preco}</td>
+                        <td>X</td>
+                    </tr>
+                ))}
             </tbody>
         </tabel>
     </div>

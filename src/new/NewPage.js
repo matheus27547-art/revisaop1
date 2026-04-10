@@ -24,9 +24,9 @@ const NewPage = props => {
     <div>
         <h1>Novo produto</h1>
         <form>
-            <input label="Nome" id="name" name="name" value={form.nome} onChange={handleChange}/>
-            <input label="Descrição" id="description" name="description" value={form.descricao} onChange={handleChange}/>
-            <input label="Preço" id="price" name="price" value={form.preco} onChange={handleChange}/>
+            <input label="Nome" id="nome" name="nome" value={form.nome} onChange={handleChange}/>
+            <input label="Descrição" id="descricao" name="descricao" value={form.descricao} onChange={handleChange}/>
+            <input label="Preço" id="preco" name="preco" value={form.preco} onChange={handleChange}/>
             <hr/>
             <Button onClick={handleSubmit}>
                 Submeter produto

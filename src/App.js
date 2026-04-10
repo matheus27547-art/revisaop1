@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Router>
         <div>
-          <Link to="/new">Novo Produto</Link>
+          <Link to="/new">Novo Produto</Link><br/>
           <Link to="/all">Todos os Produtos</Link>
         </div>
 
